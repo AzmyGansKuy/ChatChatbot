@@ -14,11 +14,12 @@ api_client = LydiaAI(CoffeeHouseAPI)
 
 
 prvt_message = '''
-Misaki - v0.1\n Using Coffeehouse AI from @Intellivoid\n Click /help to know more :D
+Hay Saya Chat Bot - v0.1\n Saya Telah Di Rancang Khusus Dengan Segabut Mungkin, Type /help Untuk 
+Melihat Perintah Saya :D
 '''
 
 grp_message = '''
-Hi, I'm Misaki
+Hi, I'm Chat Bot!
 '''
 
 @app.on_message(filters.command(["start"], prefixes=["/", "!"]))
@@ -29,7 +30,7 @@ async def start(client, message):
         await message.reply_text(grp_message)
         return
     else:
-        buttons = [[InlineKeyboardButton("Managed by", url="https://t.me/dank_as_fuck"),
+        buttons = [[InlineKeyboardButton("Owner by☕", url="https://t.me/LordGanss10"),
                     ]]
         await message.reply_text(prvt_message, reply_markup=InlineKeyboardMarkup(buttons))
 
@@ -37,8 +38,7 @@ async def start(client, message):
 @app.on_message(filters.command("help"))
 async def help_command(client, message):
     help_text = """
-    **Misaki is a chatbot which uses @Intellivoid's Coffeehouse AI.**\n\n
-Coffeehouse Lydia AI can actively chat and learn from you, it gets better everytime.
+    **chatbot Coffeehouse AI.**\n\nCoffeehouse Lydia AI can actively chat and learn from you, it gets better everytime.
 """
     self = await app.get_me()
     busername = self.username
